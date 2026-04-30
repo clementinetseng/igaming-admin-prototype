@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "campaigns": "Campaigns",
+    "auditLog": "Audit Log"
+  },
+  "topbar": {
+    "brand": "Admin Console",
+    "logout": "Sign out"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "saveDraft": "Save as Draft",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "close": "Close",
+    "edit": "Edit",
+    "loading": "Loading…",
+    "search": "Search",
+    "clearFilters": "Clear filters",
+    "back": "Back"
+  }
+}
