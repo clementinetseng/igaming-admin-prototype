@@ -3,6 +3,7 @@ import { createHashRouter, Navigate } from 'react-router-dom'
 import { AppLayout } from '@/components/shell/AppLayout'
 import NotFound from '@/pages/NotFound'
 import CampaignList from '@/pages/campaigns/CampaignList'
+import CampaignForm from '@/pages/campaigns/CampaignForm'
 
 export const router = createHashRouter([
   {
@@ -11,6 +12,8 @@ export const router = createHashRouter([
     children: [
       { index: true, element: <Navigate to="/campaigns" replace /> },
       { path: 'campaigns', element: <CampaignList /> },
+      { path: 'campaigns/new', element: <CampaignForm /> },
+      { path: 'campaigns/:id/edit', element: <CampaignForm /> },
       { path: '*', element: <NotFound /> },
     ],
   },
