@@ -18,7 +18,7 @@ export function ChannelPanelInApp({
       <CardHeader className="flex flex-row items-center gap-3 space-y-0">
         <Bell className="h-4 w-4" />
         <CardTitle className="text-base flex-1">{t('campaign.channels.inApp', 'In-App')}</CardTitle>
-        <Switch checked={value.enabled} onCheckedChange={(v) => onChange({ ...value, enabled: v })} />
+        <Switch checked={value.enabled} onCheckedChange={(v: boolean) => onChange({ ...value, enabled: v })} />
       </CardHeader>
       {value.enabled && (
         <CardContent className="space-y-4">
