@@ -1,23 +1,135 @@
 {
-  "nav": {
-    "campaigns": "Campaigns",
-    "auditLog": "Audit Log"
-  },
-  "topbar": {
-    "brand": "Admin Console",
-    "logout": "Sign out"
-  },
+  "nav": { "campaigns": "Campaigns", "auditLog": "Audit Log" },
+  "topbar": { "brand": "Admin Console", "logout": "Sign out" },
   "common": {
-    "cancel": "Cancel",
-    "save": "Save",
-    "saveDraft": "Save as Draft",
-    "delete": "Delete",
-    "confirm": "Confirm",
-    "close": "Close",
-    "edit": "Edit",
-    "loading": "Loading…",
-    "search": "Search",
-    "clearFilters": "Clear filters",
-    "back": "Back"
+    "cancel": "Cancel", "save": "Save", "saveDraft": "Save as Draft",
+    "delete": "Delete", "confirm": "Confirm", "close": "Close",
+    "edit": "Edit", "loading": "Loading…", "search": "Search",
+    "clearFilters": "Clear filters", "back": "Back",
+    "previous": "Previous", "next": "Next"
+  },
+  "auditLogStub": {
+    "title": "Redirecting to platform Audit Log",
+    "body": "In production this opens the existing platform-wide audit log page (out of scope for this prototype)."
+  },
+  "notFound": { "body": "The page you are looking for does not exist." },
+  "campaign": {
+    "list": {
+      "title": "Campaigns",
+      "newButton": "New Campaign",
+      "errorTitle": "Something went wrong",
+      "errorBody": "We could not load campaigns. Please try again.",
+      "retry": "Retry",
+      "pageOf": "Page {{page}} of {{total}}",
+      "empty": { "title": "No campaigns yet", "body": "Create your first campaign to start reaching players." },
+      "filterEmpty": { "title": "No campaigns match your filters", "body": "Try adjusting your filters or clearing them." }
+    },
+    "filters": { "status": "Status", "channels": "Channels", "createdBy": "Created by" },
+    "table": { "name": "Name", "tags": "Tags", "channels": "Channels", "audience": "Audience", "schedule": "Schedule", "status": "Status", "createdBy": "Created by", "updated": "Updated" },
+    "status": { "draft": "Draft", "scheduled": "Scheduled", "active": "Active", "disabled": "Disabled" },
+    "channels": { "inApp": "In-App", "email": "Email", "sms": "SMS", "push": "Push" },
+    "form": {
+      "newTitle": "New Campaign", "editTitle": "Edit Campaign",
+      "basicInfo": "Basic Info", "name": "Campaign Name", "tags": "Tags (comma separated)",
+      "audience": "Master Audience", "channels": "Channel Panels",
+      "title": "Title", "category": "Category", "body": "Body",
+      "scheduleButton": "Schedule…",
+      "draftSaved": "Draft saved",
+      "scheduled": "Campaign scheduled",
+      "errors": {
+        "nameRequired": "Name is required.",
+        "audienceRequired": "Add at least one audience condition or enable broadcast.",
+        "channelRequired": "Enable at least one channel.",
+        "scheduleAtRequired": "Pick a date & time for the schedule."
+      }
+    },
+    "inApp": {
+      "personal": "Personal", "promo": "Promotion", "announcement": "Announcement",
+      "richHint": "Rich text editor placeholder — supports bold, links, inline images in production",
+      "triggerToast": "Trigger toast notification"
+    },
+    "email": { "subject": "Subject", "preheader": "Preheader", "sender": "Sender From", "body": "HTML Body", "preview": "Preview" },
+    "sms": { "body": "Message", "chars": "chars", "segments": "splits into {{n}} segments", "stopHint": "STOP unsubscribe text auto-appended", "senderId": "Sender ID" },
+    "push": { "title": "Title", "body": "Body", "url": "Click URL" },
+    "schedule": {
+      "title": "Schedule",
+      "immediate": "Send immediately", "later": "Schedule for later",
+      "datetime": "Date & time (PH timezone)",
+      "now": "Immediately",
+      "ignoreQH": "Override Quiet Hours (time-sensitive only)",
+      "quietWarning": "Selected time falls in Quiet Hours (23:00–08:00). SMS / Push will auto-defer to 08:00 next morning unless override is checked."
+    },
+    "scheduleConfirm": {
+      "title": "Confirm Schedule",
+      "recipients": "Estimated recipients",
+      "excluded": "Excluded",
+      "optOut": "Marketing opt-out",
+      "frequencyCap": "Frequency cap",
+      "suppression": "Suppression list",
+      "unverifiedContact": "Unverified contact",
+      "channels": "Channels",
+      "schedule": "Schedule",
+      "broadcastWarning": "This is a BROADCAST to all players. Double-check before confirming.",
+      "confirm": "Confirm Schedule"
+    },
+    "testSend": {
+      "button": "Test send",
+      "title": "Send test",
+      "description": "Send to 1–5 recipients via {{channel}}",
+      "recipients": "Recipients",
+      "send": "Send",
+      "sent": "Test send dispatched to {{n}} recipients"
+    },
+    "toggle": {
+      "disableTitle": "Disable this campaign?",
+      "disableBody": "It will be hidden from all {{n}} recipients. Read history is preserved.",
+      "enableTitle": "Enable this campaign?",
+      "enableBody": "It will be visible again to all {{n}} recipients. No new toast notifications will be triggered.",
+      "disable": "Disable",
+      "enable": "Enable"
+    },
+    "detail": {
+      "notFound": "Campaign not found.",
+      "scheduledFor": "Scheduled for ",
+      "sentOn": "Sent on ",
+      "cancelSchedule": "Cancel Schedule",
+      "scheduleCancelled": "Schedule cancelled — back to draft",
+      "enabled": "Enabled", "disabled": "Disabled",
+      "enabledMsg": "Campaign enabled (no new toast notifications)",
+      "disabledMsg": "Campaign disabled",
+      "tabs": { "audience": "Audience", "channels": "Channels", "activity": "Activity" },
+      "audienceSummary": "Audience Summary",
+      "estimatedRecipients": "Estimated recipients (snapshot)",
+      "noChannels": "No channels enabled.",
+      "progress": "Sending progress",
+      "lastUpdate": "Last update",
+      "contentPreview": "Content preview"
+    },
+    "activity": {
+      "created": "Created by {{user}}",
+      "updated": "Last updated",
+      "disabled": "Disabled by {{user}}",
+      "fullLogHint": "Full audit history is available in the platform Audit Log."
+    }
+  },
+  "audience": {
+    "broadcast": "Broadcast to all players",
+    "addCondition": "Add condition",
+    "combineWith": "Combine conditions with",
+    "estimateLabel": "Estimated recipients",
+    "conditions": {
+      "vipTier": "VIP Tier",
+      "playerStatus": "Player Status",
+      "firstDeposit": "First Deposit",
+      "registrationDays": "Registered (days)",
+      "cumulativeDeposit": "Cumulative Deposit",
+      "verifiedContact": "Verified Contact"
+    },
+    "values": {
+      "active": "Active", "dormant": "Dormant", "churned": "Churned",
+      "yes": "Yes", "no": "No",
+      "emailOnly": "Email", "phoneOnly": "Phone", "both": "Both"
+    },
+    "units": { "days": "days" }
   }
 }
